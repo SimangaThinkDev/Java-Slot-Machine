@@ -50,10 +50,11 @@ public class Game {
         Thread.sleep(500);
 
         if (rolls[0].equals(rolls[1]) && rolls[0].equals(rolls[2])) {
-            // Increment Balance
             System.out.println("~~~~~~~~~~YOU HIT THE BONUS~~~~~~~~~");
             System.out.println("            YOU WIN R"+ bet * 4);
             System.out.println("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
+            
+            // Increment Balance
             Balance += bet * 4;
         } else if (rolls[0].equals(rolls[1]) || 
                     rolls[0].equals(rolls[2]) ||
@@ -61,6 +62,8 @@ public class Game {
                         System.out.println("~~~~~~~~YOU HIT THE Semi_BONUS~~~~~~");
                         System.out.println("            YOU WIN R"+ bet * 2);
                         System.out.println("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
+
+                        // Increment balance according to winnings
                         Balance += bet * 2;
         } else {
             System.out.println("Trrrr, money out R" + bet);
@@ -69,8 +72,10 @@ public class Game {
 
         System.out.println();
         gameState();
+        System.out.println("Thank you for Playing with us");
         scanner.close();
     }
+    
     private static void gameState() throws InterruptedException {
         System.out.println("Do you want to continue?");
         System.out.print(">> ");
